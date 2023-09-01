@@ -1,0 +1,17 @@
+.time-display {
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-row {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+}
+
+.button{
+    font-size: 1.2rem;
+    border-radius: 4px;
+}
