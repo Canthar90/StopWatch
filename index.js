@@ -18,22 +18,20 @@ function TimeStart() {
     
 }
 
-
 function updateTime() {
     // let time = new Date().getTime()/ 1000
     if (stoped) return
     
-    if (measuredSeconds === 59) {
+    if (measuredMinutes === 59 && measuredSeconds === 59){
+        measuredHouers++
+        measuredMinutes = 0
+        measuredSeconds = 0
+    } else if (measuredSeconds === 59) {
         measuredMinutes++
         measuredSeconds = 0
     } else  measuredSeconds++
-    
 
-    if (measuredMinutes === 59){
-        measuredHouers++
-        measuredMinutes = 0
-    } 
-    displayedTime = measuredHouers + ':' + measuredMinutes + ':' + measuredSeconds
+    displayedTime = `${measuredHouers}`.padStart(2,0) + ':' + `${measuredMinutes}`.padStart(2,0) + ':' + `${measuredSeconds}`.padStart(2,0)
     document.getElementById('Time').innerHTML = displayedTime
    
 }
